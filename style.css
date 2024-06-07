@@ -1,0 +1,621 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Barra de rolagem */
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6F58ED;
+}
+
+/* corpo e fonts */
+body {
+    font-style: normal;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Cabeçalho */
+
+.nav-fake {
+    width: 100%;
+    height: 60px;
+    background-color: #6F58ED;
+}
+
+nav {
+    width: 100vw;
+    height: 60px;
+    background-color: #6F58ED;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.sections {
+    display: flex;
+}
+
+.sections a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.sections a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.box-logo {
+    margin-left: 10px;
+    width: 50px;
+    height: 45px;
+}
+
+#logo {
+    width: 100%;
+    height: 100%;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sections {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #6F58ED;
+    }
+    .sections a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0 !important;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Section 0 */
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.align_center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.background_initial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('imagens/sea-4002951_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: calc(100vh - 60px);
+    color: white;
+}
+
+.center {
+    width: 180px;
+    height: 60px;
+}
+  
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.btn:hover {
+    background: #4F95DA;
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn div {
+    color: white; 
+    font-size: 18px;
+    font-weight: 100;
+}
+
+/* Seção genérica */
+section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Section 1 */
+section.section-1 {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+}
+
+.box-1,
+.box-2 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.box-1>img {
+    width: 500px;
+}
+
+.icons_problem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 500px;
+    height: 525px;
+    margin-right: 100px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.button_carousel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, #5b4af7, #8365f0);
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button_carousel.prev {
+    left: 10px;
+}
+
+.button_carousel.next {
+    right: 10px;
+}
+
+.button_carousel:hover {
+    background: linear-gradient(45deg, #236bf3, #76beee);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Med */
+
+.background_mid1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('imagens/ocean-6530523_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+/* Section 2*/
+
+.section-2 {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Section 3*/
+
+.section-3 {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+/* Section 4 */
+.background-beneficios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('imagens/jellyfish-698521_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+/* Section 5 */
+
+.section-5 {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+/* Section 6*/
+
+.section-6 {
+    height: 100vh;
+    background-image: url('imagens/shark-8182315_1280\ \(1\).jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-container h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    font-weight: 500;
+    color: black;
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group textarea {
+    resize: none;
+}
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3babec;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #215188;
+}
+.char-count {
+    font-size: 0.9em;
+    text-align: right;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* footer */
+
+footer {
+    background-color: black;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-footer {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+}
+
+.copyright {
+    color:black;
+    background-color: #6F58ED;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+} 
+
+/* Bolhas */
+
+section span{
+    position: absolute;
+    bottom: 50px;
+    background: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: animate 4s linear infinite;
+}
+
+section span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.25) translate(-70% , -70%);
+    background: radial-gradient(#fff, transparent);
+    border-radius: 50%;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    99%{
+        opacity: 1; 
+    }
+    100%{
+        transform: translateY(-1200%);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+
+@media screen and (max-width: 768px) {
+    /* Inicial */
+
+    section {
+        display: block;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .background_initial {
+        background-position: right;
+    }
+
+    .background_initial>h1 {
+        font-size: 30px !important;
+    }
+
+    .center {
+        margin-top: 100px;
+    }
+
+    #inicial h1 {
+        padding: 20px;
+    }
+
+    /* Section 1*/
+
+    .section-1 {
+        flex-wrap: wrap-reverse !important;
+        padding: 0;
+    }
+
+    .carousel {
+        width: 100vw;
+    }
+
+    .button_carousel {
+        top: 100px;
+    }
+
+    .section-1 h2 {
+        padding: 20px !important;
+    }
+
+    /* Mid */
+
+    .background_mid1 h1 {
+        text-align: center;
+        font-size: 30px !important;
+    }
+
+    /* Section 2 */
+
+    .row {
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+
+    .box-2 h2 {
+        padding: 20px;
+    }
+
+    .box-1 img[src="imagens/buoy-4843825_1280.jpg"] {
+        width: 100vw;
+        margin: 0 !important;
+    }
+
+    .box-1 img[src="imagens/ocean-1867285_1280 (1).jpg"] {
+        width: 100vw;
+        margin: 0 !important;
+    }
+
+    /* Section 3 */
+
+    .row[id=metas] {
+        flex-wrap: wrap-reverse !important;
+    }
+
+    .icons_problem {
+        flex-wrap: wrap;
+    }
+
+    .icons_problem div {
+        margin: 10px;
+    }
+
+    .box-1 img[src="imagens/piran-8275931_1280.jpg"] {
+        width: 100vw;
+        margin: 0 !important;
+    }
+
+    /* Section 4 */
+
+    .background-beneficios {
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
+
+    .icon div {
+        margin-right: 25px !important;
+        margin-left: 25px !important;
+    }
+
+    /* Section 5 */
+
+    .box-1 img[src="imagens/boats-5813000_1280.jpg"] {
+        width: 100vw;
+        margin: 0 !important;
+    }
+
+    /* Section 6 */
+
+    .section-6 {
+        background-image: none;
+    }
+
+    /* Footer*/
+
+    .social-media {
+        flex-wrap: wrap;
+        width: 100vw !important;
+        justify-content: center;
+    }
+
+    .social-media div {
+        font-size: 15px !important;
+        text-align: center;
+        margin-left: 0 !important;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+}
